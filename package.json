@@ -1,8 +1,6 @@
 {
   "name": "webhook-echo-sample",
   "version": "1.0.0",
-  "description": "mysql": "",
- 
   "scripts": {
     "start": "node fadi.js"
   },
