@@ -8,10 +8,10 @@ const restService = express();
 
 
 //MySql
-var server = require('http').createServer(app);
+
 var mysql = require('mysql');
-var app = express();
-app.use(express.logger());
+
+
 var str1 = 'UPDATE home SET room = "'
 var str2 = 'TV'; 
 var str3 = '" WHERE ID = "2"'
