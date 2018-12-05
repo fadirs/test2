@@ -7,6 +7,7 @@ const restService = express();
 ///////////////////////////////////////////
 var mysql = require('mysql');
 
+var str2 = '"ttt"' ;
 
 //var data_f = str1.concat(str2, str3);
 ///var data_f = 'UPDATE home SET room ='+ new_data +' WHERE ID = "2"';
@@ -74,9 +75,9 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-var str1 = 'UPDATE home SET room = "';
+var str1 = 'UPDATE home SET room = ';
 //var str2 = 'T11111V'; 
-var str3 = '" WHERE ID = "2"';
+var str3 = ' WHERE ID = "2"';
 var data_f = str1.concat(str2, str3);
 
 restService.get('/', function(request, response) {
