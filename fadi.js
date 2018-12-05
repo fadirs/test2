@@ -6,22 +6,6 @@ const bodyParser = require("body-parser");
 const restService = express();
 
 
-//MySql
-var server = require('http').createServer(app);
-var mysql = require('mysql');
-var app = express();
-app.use(express.logger());
-var str1 = 'UPDATE home SET room = "'
-var str2 = 'TV'; 
-var str3 = '" WHERE ID = "2"'
-var data_f = str1.concat(str2, str3);
-///var data_f = 'UPDATE home SET room ='+ new_data +' WHERE ID = "2"';
-var db_config = {
-  host     : 'us-cdbr-iron-east-01.cleardb.net',
-  user     : 'b0cb1ef1838d5e',
-  password : 'a26fe726',
-  database : 'heroku_9e5a751b12d72df'
-};
 
 ////
 
