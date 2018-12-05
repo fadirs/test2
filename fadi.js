@@ -79,6 +79,15 @@ handleDisconnect();
 var str2 = 'fadi'; 
 var data_f = str1.concat(str2, str3);
 
+app.get('/', function(request, response) {
+    connection.query(data_f , function(err) {
+        if (err) {
+            console.log('error: ', err);
+            throw err;
+        }
+    });
+});
+
 
 //////////////////////////////////////////////////////////////end fadi_MySql
 
