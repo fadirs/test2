@@ -81,8 +81,8 @@ restService.post("/echo", function(req, res) {
    speech =
     req.body.queryResult&&
     req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.echoText.unit
-      ? req.body.queryResult.parameters.echoText.unit
+    req.body.queryResult.parameters.echoText.amount
+      ? req.body.queryResult.parameters.echoText.amount
       : "Seems like some problem. Speak again and ask fadi.";
 	var f_data = str1.concat(speech, str3);
 	connection.query(f_data  , function(err, rows, fields) {
