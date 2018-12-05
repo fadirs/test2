@@ -3,7 +3,7 @@ var server = require('http').createServer(app);
 var mysql = require('mysql');
 var app = express();
 app.use(express.logger());
-
+var data_f = 'SELECT ID from home';
 var db_config = {
   host     : 'us-cdbr-iron-east-01.cleardb.net',
   user     : 'b0cb1ef1838d5e',
@@ -38,7 +38,7 @@ function handleDisconnect() {
 handleDisconnect();
 
 app.get('/', function(request, response) {
-    connection.query('SELECT * from home', function(err, rows, fields) {
+    connection.query(data_f , function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
             throw err;
