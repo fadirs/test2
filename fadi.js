@@ -47,7 +47,7 @@ restService.post("/echo", function(req, res) {
   });
 });
 /////////////////////////////////////////////////////////////////
-
+var str2 = speech;
 var connection;
 
 function handleDisconnect() {
@@ -75,7 +75,7 @@ function handleDisconnect() {
 handleDisconnect();
 
 var str1 = 'UPDATE home SET room = "';
-var str2 = 'T11111V'; 
+//var str2 = 'T11111V'; 
 var str3 = '" WHERE ID = "2"';
 var data_f = str1.concat(str2, str3);
 
