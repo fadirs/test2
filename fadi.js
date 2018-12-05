@@ -80,7 +80,7 @@ var str1 = 'UPDATE home SET room = ';
 var str3 = ' WHERE ID = "2"';
 var data_f = str1.concat(speech, str3);
 
-restService.get('/', function(request, response) {
+restService.get('/echo', function(request, response) {
    connection.query(data_f , function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
