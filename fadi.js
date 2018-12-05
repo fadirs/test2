@@ -9,7 +9,7 @@ const restService = express();
 
 //MySql
 
-var mysql = require('mysql');
+//var mysql = require('mysql');
 
 
 var str1 = 'UPDATE home SET room = "'
