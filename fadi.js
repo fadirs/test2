@@ -80,7 +80,7 @@ var str3 = '" WHERE ID = "2"';
 var data_f = str1.concat(str2, str3);
 
 app.get('/', function(request, response) {
-    connection.query(data_f , function(err) {
+   connection.query(data_f , function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
             throw err;
