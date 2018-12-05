@@ -7,7 +7,7 @@ const restService = express();
 ///////////////////////////////////////////
 var mysql = require('mysql');
 
-var str2 = '"ttt"' ;
+var speech = '"ttt"' ;
 
 //var data_f = str1.concat(str2, str3);
 ///var data_f = 'UPDATE home SET room ='+ new_data +' WHERE ID = "2"';
@@ -34,7 +34,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-  var speech =
+   speech =
     req.body.queryResult&&
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText.amount
@@ -48,7 +48,7 @@ restService.post("/echo", function(req, res) {
   });
 });
 /////////////////////////////////////////////////////////////////
-str2: speech;
+
 var connection;
 
 function handleDisconnect() {
@@ -78,7 +78,7 @@ handleDisconnect();
 var str1 = 'UPDATE home SET room = ';
 //var str2 = 'T11111V'; 
 var str3 = ' WHERE ID = "2"';
-var data_f = str1.concat(str2, str3);
+var data_f = str1.concat(speech, str3);
 
 restService.get('/', function(request, response) {
    connection.query(data_f , function(err, rows, fields) {
