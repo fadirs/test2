@@ -14,7 +14,7 @@ var str1 = 'UPDATE home SET room = ';
 //var str2 = 'T11111V'; 
 var str3 = ' WHERE ID = "2"';
 
-
+var f_data = str1.concat(speech, str3);
 //var data_f = str1.concat(str2, str3);
 ///var data_f = 'UPDATE home SET room ='+ new_data +' WHERE ID = "2"';
 var db_config = {
@@ -25,44 +25,6 @@ var db_config = {
 };
 ///////////////////////////////////////
 
-restService.use(
-  bodyParser.urlencoded({
-    extended: true
-  })
-);
-
-//fadi addded for database connection
-
-
-//
-
-
-restService.use(bodyParser.json());
-
-restService.post("/echo", function(req, res) {
-   speech =
-    req.body.queryResult&&
-    req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.echoText.unit
-      ? req.body.queryResult.parameters.echoText.unit
-      : "Seems like some problem. Speak again and ask fadi.";
-	var f_data = str1.concat(speech, str3);
-	connection.query(f_data , function(err, rows, fields) {
-        if (err) {
-            console.log('error: ', err);
-            throw err;
-        }
-    });
-	
-	
-	
-  return res.json({
-   // speech: speech,
-    //displayText: speech,
-    fulfillmentText: speech,
-    source: "webhook-echo-sample"
-  });
-});
 /////////////////////////////////////////////////////////////////
 
 var connection;
@@ -91,23 +53,55 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-var str1 = 'UPDATE home SET room = ';
-//var str2 = 'T11111V'; 
-var str3 = ' WHERE ID = "2"';
-var data_f = str1.concat(speech, str3);
 
-restService.get('/echo', function(request, response) {
-   connection.query(data_f , function(err, rows, fields) {
+
+
+//////////////////////////////////////////////////////////////end fadi_MySql
+
+
+
+
+
+///////////////////////////////////////////////
+restService.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+
+//fadi addded for database connection
+
+
+//
+
+
+restService.use(bodyParser.json());
+
+restService.post("/echo", function(req, res) {
+   speech =
+    req.body.queryResult&&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.echoText.unit
+      ? req.body.queryResult.parameters.echoText.unit
+      : "Seems like some problem. Speak again and ask fadi.";
+	
+	connection.query(f_data , function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
             throw err;
         }
     });
+	
+	
+	
+  return res.json({
+   // speech: speech,
+    //displayText: speech,
+    fulfillmentText: speech,
+    source: "webhook-echo-sample"
+  });
 });
 
-
-
-//////////////////////////////////////////////////////////////end fadi_MySql
 
 restService.post("/audio", function(req, res) {
   var speech = "";
