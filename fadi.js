@@ -7,7 +7,7 @@ const restService = express();
 ///////////////////////////////////////////
 var mysql = require('mysql');
 
-var speech = '"ttt"' ;
+var speech = '"fadi"' ;
 
 //var data_f = str1.concat(str2, str3);
 ///var data_f = 'UPDATE home SET room ='+ new_data +' WHERE ID = "2"';
