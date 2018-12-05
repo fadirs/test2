@@ -2,7 +2,7 @@
   "name": "webhook-echo-sample",
   "version": "1.0.0",
   "description": "Webhook echo sample",
-  "main": "index.js",
+  "main": "fadi.js",
   "scripts": {
     "start": "node index.js"
   },
