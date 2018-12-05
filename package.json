@@ -2,7 +2,7 @@
   "name": "webhook-echo-sample",
   "version": "1.0.0",
   "description": "mysql": "",
-  "main": "fadi.js",
+ 
   "scripts": {
     "start": "node fadi.js"
   },
