@@ -8,9 +8,9 @@ const restService = express();
 var mysql = require('mysql');
 
 var str1 = 'UPDATE home SET room = "'
-var str2 = 'TV'; 
+//var str2 = 'TV'; 
 var str3 = '" WHERE ID = "2"'
-var data_f = str1.concat(str2, str3);
+//var data_f = str1.concat(str2, str3);
 ///var data_f = 'UPDATE home SET room ='+ new_data +' WHERE ID = "2"';
 var db_config = {
   host     : 'us-cdbr-iron-east-01.cleardb.net',
@@ -76,7 +76,19 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-//////////////////////////////////////////////////////////////
+var str2 = 'fadi'; 
+var data_f = str1.concat(str2, str3);
+
+app.get('/', function(request, response) {
+    connection.query(data_f , function(err, rows, fields) {
+        if (err) {
+            console.log('error: ', err);
+            throw err;
+        }
+    });
+});
+
+//////////////////////////////////////////////////////////////end fadi_MySql
 
 restService.post("/audio", function(req, res) {
   var speech = "";
