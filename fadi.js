@@ -7,7 +7,13 @@ const restService = express();
 ///////////////////////////////////////////
 var mysql = require('mysql');
 
-var speech = '"fadi121121"' ;
+var speech = '"fadi Riad"' ;
+
+
+var str1 = 'UPDATE home SET room = ';
+//var str2 = 'T11111V'; 
+var str3 = ' WHERE ID = "2"';
+
 
 //var data_f = str1.concat(str2, str3);
 ///var data_f = 'UPDATE home SET room ='+ new_data +' WHERE ID = "2"';
@@ -41,7 +47,7 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText.unit
       : "Seems like some problem. Speak again and ask fadi.";
 	
-	connection.query(data_f , function(err, rows, fields) {
+	connection.query(str1.concat(speech, str3) , function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
             throw err;
