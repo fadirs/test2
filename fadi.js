@@ -3,7 +3,7 @@ var server = require('http').createServer(app);
 var mysql = require('mysql');
 var app = express();
 app.use(express.logger());
-var new_data = '"fadi"' ; 
+var new_data = 'fadi' ; 
 var data_f = 'UPDATE home SET room =', new_data ,' WHERE ID = "2"';
 var db_config = {
   host     : 'us-cdbr-iron-east-01.cleardb.net',
