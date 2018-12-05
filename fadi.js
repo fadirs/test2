@@ -48,7 +48,7 @@ restService.post("/echo", function(req, res) {
   });
 });
 /////////////////////////////////////////////////////////////////
-var str2 = speech;
+str2 = speech;
 var connection;
 
 function handleDisconnect() {
