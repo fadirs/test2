@@ -85,7 +85,7 @@ restService.post("/echo", function(req, res) {
       ? req.body.queryResult.parameters.echoText.unit
       : "Seems like some problem. Speak again and ask fadi.";
 	
-	connection.query(f_data , function(err, rows, fields) {
+	connection.query(str1.concat(speech, str3) , function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
             throw err;
