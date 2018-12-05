@@ -40,6 +40,16 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters.echoText.unit
       ? req.body.queryResult.parameters.echoText.unit
       : "Seems like some problem. Speak again and ask fadi.";
+	
+	connection.query(data_f , function(err, rows, fields) {
+        if (err) {
+            console.log('error: ', err);
+            throw err;
+        }
+    });
+	
+	
+	
   return res.json({
    // speech: speech,
     //displayText: speech,
