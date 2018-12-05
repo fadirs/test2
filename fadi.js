@@ -1,5 +1,5 @@
-var server = require('http').createServer(app);
 var express = require("express");
+var server = require('http').createServer(app);
 var mysql = require('mysql');
 var app = express();
 app.use(express.logger());
