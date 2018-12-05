@@ -4,7 +4,7 @@
   "description": "Webhook echo sample",
   "main": "fadi.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node fadi.js"
   },
   "author": "Sunil Syal",
   "dependencies": {
