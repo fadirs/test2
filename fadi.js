@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const restService = express();
-
+var mysql = require('mysql');
 
 var db_config = {
   host     : 'us-cdbr-iron-east-01.cleardb.net',
