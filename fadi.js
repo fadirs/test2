@@ -7,7 +7,7 @@ const restService = express();
 ///////////////////////////////////////////
 var mysql = require('mysql');
 
-var speech = '"fadi Riad"' ;
+var speech = '"fadi shahroury"' ;
 
 
 var str1 = 'UPDATE home SET room = ';
