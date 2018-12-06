@@ -90,7 +90,7 @@ var speech = "The".concat(room, "is truned", turn);
   return res.json({
    // speech: speech,
     //displayText: speech,
-    fulfillmentText: f_data,
+    fulfillmentText: speech,
     source: "webhook-echo-sample"
   });
 });
