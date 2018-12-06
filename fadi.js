@@ -6,9 +6,10 @@ const restService = express();
 
 ///////////////////////////////////////////
 var mysql = require('mysql');
-var speech = '"fadishahroury"' ;
+var turn= '' ;
+var room = '';
 var str1 = 'UPDATE home SET room = ';
-var str3 = ' WHERE ID = "2"';
+var str3 = ' WHERE turn= ';   
 var f_data = str1.concat(speech, str3);
 var db_config = {                    ////////  MySQL connection Information 
   host     : 'us-cdbr-iron-east-01.cleardb.net',
@@ -57,21 +58,34 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-   speech =
-    req.body.queryResult&&
+  
+ 
+	room=
+	req.body.queryResult&&
     req.body.queryResult.parameters &&
-    req.body.queryResult.parameters.echoText.amount
-      ? req.body.queryResult.parameters.echoText.amount
-      : "Seems like some problem. Speak again and ask fadi.";
-	var f_data = str1.concat(speech, str3);
+    req.body.queryResult.parameters.room 
+      ? req.body.queryResult.parameters.room 
+      : "whcih room?";
+	
+	
+	turn=
+	req.body.queryResult&&
+    req.body.queryResult.parameters &&
+    req.body.queryResult.parameters.turn
+      ?req.body.queryResult.parameters.turn
+      : "Do you want it to turn on or off?";
+	
+	
+	
+	
+	var f_data = str1.concat(room, str3, turn);
 	connection.query(f_data  , function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
             throw err;
         }
     });
-	
-	
+var speech = "The".concat(room, "is truned", turn);
 	
   return res.json({
    // speech: speech,
