@@ -10,7 +10,6 @@ var turn= '' ;
 var room = '';
 var str1 = 'UPDATE home SET room = ';
 var str3 = ' WHERE turn= ';   
-var f_data = str1.concat(speech, str3);
 var db_config = {                    ////////  MySQL connection Information 
   host     : 'us-cdbr-iron-east-01.cleardb.net',
   user     : 'b0cb1ef1838d5e',
