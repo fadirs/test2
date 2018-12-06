@@ -8,8 +8,8 @@ const restService = express();
 var mysql = require('mysql');
 var turn= '' ;
 var room = '';
-var str1 = 'UPDATE home SET room = "';
-var str3 = '" WHERE turn= "';
+var str1 = 'UPDATE home SET turn = "';
+var str3 = '" WHERE room= "';
 var str4 = '"';
 var db_config = {                    ////////  MySQL connection Information 
   host     : 'us-cdbr-iron-east-01.cleardb.net',
@@ -78,7 +78,7 @@ restService.post("/echo", function(req, res) {
 	
 	
 	
-	var f_data = str1.concat(room, str3, turn,str4);
+	var f_data = str1.concat(turn, str3, room,str4);
 	connection.query(f_data  , function(err, rows, fields) {
         if (err) {
             console.log('error: ', err);
